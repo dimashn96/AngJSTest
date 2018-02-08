@@ -1,0 +1,100 @@
+{
+    "notebooks" : [
+        {
+            "id" : 0,
+            "company": "Xiaomi",
+            "model": "Mi Notebook Pro",
+            "cpu": {
+                "platform": "Intel Core i5",
+                "cores": "4",
+                "frequency": "3400"
+            },
+            "ram": {
+                "amount": "8",
+                "type": "DDR4"
+            },
+            "gpu": {
+                "platform": "NVIDIA GeForce MX150",
+                "amount": "2"
+            },
+            "color": "Darkgray",
+            "price": 1200
+        }, {
+            "id" : 1,
+            "company": "Apple",
+            "model": "MacBook Pro",
+            "cpu": {
+                "platform": "Intel Core i7",
+                "cores": "4",
+                "frequency": "3400"
+            },
+            "ram": {
+                "amount": "16",
+                "type": "DDR3L"
+            },
+            "gpu": {
+                "platform": "Intel Iris Pro 5200",
+                "amount": "1"
+            },
+            "color": "Gray",
+            "price": 2100
+        }, {
+            "id" : 2,
+            "company": "Dell",
+            "model": "Inspiron 15",
+            "cpu": {
+                "platform": "Intel Core i5",
+                "cores": "4",
+                "frequency": "3500"
+            },
+            "ram": {
+                "amount": "8",
+                "type": "DDR4"
+            },
+            "gpu": {
+                "platform": "NVIDIA GeForce GTX 1050",
+                "amount": "4"
+            },
+            "color": "Black",
+            "price": 1000
+        }, {
+            "id" : 3,
+            "company": "Lenovo",
+            "model": "Y700-15ISK ",
+            "cpu": {
+                "platform": "Intel Core i5",
+                "cores": "4",
+                "frequency": "3200"
+            },
+            "ram": {
+                "amount": "8",
+                "type": "DDR4"
+            },
+            "gpu": {
+                "platform": "NVIDIA GeForce GTX 960",
+                "amount": "4"
+            },
+            "color": "Black",
+            "price": 900
+        }, {
+            "id" : 4,
+            "company": "HP",
+            "model": "ENVY x360",
+            "cpu": {
+                "platform": "AMD A9 9420",
+                "cores": "2",
+                "frequency": "3600"
+            },
+            "ram": {
+                "amount": "8",
+                "type": "DDR4"
+            },
+            "gpu": {
+                "platform": "AMD Radeon R5",
+                "amount": "1"
+            },
+            "color": "Black",
+            "price": 900
+        }
+    ]
+}

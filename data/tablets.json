@@ -1,0 +1,70 @@
+{
+    "tablets" : [
+        {
+            "id" : 0,
+            "company": "Apple",
+            "model": "iPad Pro",
+            "type": "iOS 10",
+            "display": {
+                "type": "IPS",
+                "size": "10.5",
+                "resolution": "2224x1668"
+            },
+            "memory": "64",
+            "color": "Gray",
+            "price": 750
+        }, {
+            "id" : 1,
+            "company": "Lenovo",
+            "model": "Tab 2 A10-70F",
+            "type": "Android 5.0 Lollipop",
+            "display": {
+                "type": "IPS",
+                "size": "10.1",
+                "resolution": "1920x1200"
+            },
+            "memory": "16",
+            "color": "Black",
+            "price": 200
+        }, {
+            "id" : 2,
+            "company": "Samsung",
+            "model": "Galaxy Tab A ",
+            "type": "Android 6.0 Marshmallow",
+            "display": {
+                "type": "IPS",
+                "size": "10.1",
+                "resolution": "1920x1200"
+            },
+            "memory": "16",
+            "color": "Black",
+            "price": 300
+        }, {
+            "id" : 3,
+            "company": "Lenovo",
+            "model": "Yoga Tab 3 Plus",
+            "type": "Android 6.0 Marshmallow",
+            "display": {
+                "type": "IPS",
+                "size": "10.1",
+                "resolution": "2560x1600"
+            },
+            "memory": "32",
+            "color": "Black",
+            "price": 400
+        }, {
+            "id" : 4,
+            "company": "ASUS",
+            "model": "ZenPad 10",
+            "type": "Android 7.0 Nougat",
+            "display": {
+                "type": "IPS",
+                "size": "10.1",
+                "resolution": "1920x1200"
+            },
+            "memory": "32",
+            "color": "Black",
+            "price": 350
+        }
+    ]
+}
