@@ -2,22 +2,15 @@
 
 newsApp.controller('NewsController', function ($scope, dataService, parseService) {
 
-    // $scope.sources = [{name:'1'},{name:'2'},{name:'3'},{name:'4'},{name:'5'}];
-
-    // $scope.items = [];
+    $scope.news = [];
+    $scope.sources = [];
 
     dataService.getSources().then((response) => {
-        $scope.sources = parseService.parse(response.data.sources,'sources');
-        console.log($scope.sources);
+        $scope.sources = parseService.parseSources(response.data.sources);
     });
 
-    // $scope.bool = false;
-
-    // function cons() {
-    //     console.log($scope.sources);
-    //     console.log($scope.bool);
-    // }
-    //
-    // setInterval(cons,5000);
+    $scope.updateNews = () => {
+        $scope.news = dataService.getNewsBySources($scope.sources,$scope.news);
+    };
 
 });

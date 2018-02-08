@@ -2,12 +2,16 @@
 
 body {
 
-  margin: 3vw;
+  margin: 0 3vw;
+
+  .clearFix {
+    clear: both;
+  }
 
   #title {
-    height: 15vw;
+    height: 25vh;
     text-align: center;
-    line-height: 15vw;
+    line-height: 25vh;
     font-size: 7vw;
   }
 
@@ -16,8 +20,42 @@ body {
   }
 
   #main {
-    height: 60vw;
+    height: 70vh;
     border: 1px solid red;
-  }
 
+    #sourcesList {
+      border: 1px solid blue;
+      float: left;
+      width: 21vw;
+      height: 100%;
+      overflow: auto;
+      font-size: 1.4vw;
+      ul {
+        li {
+          input[type=checkbox] {
+            display: none;
+            &:checked + label {
+              background-color: lightgray;
+            }
+          }
+          label {
+            display: block;
+            padding: 0.2vw 0.8vw;
+            margin: 0.2vw 0;
+          }
+        }
+      }
+    }
+    #newsList {
+      border: 1px solid green;
+      height: 100%;
+      overflow: auto;
+      font-size: 1.4vw;
+      ul {
+        li {
+          padding: 0.5vw;
+        }
+      }
+    }
+  }
 }

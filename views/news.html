@@ -1,18 +1,14 @@
 <div id="sourcesList">
-    <!--<sources-list></sources-list>-->
     <ul>
         <li ng-repeat="source in sources">
-            <input type="checkbox" id="{{source.id}}" ng-model="source.choose">
+            <input type="checkbox" id="{{source.id}}" ng-model="source.choose" ng-change="updateNews()">
             <label for="{{source.id}}">{{source.name}}</label>
         </li>
     </ul>
 </div>
-
-<!--<div id="categoryList">-->
-    <!--<ul>-->
-        <!--<li ng-repeat="source in sources">-->
-            <!--<input type="checkbox" id="{{source.id}}" ng-model="source.choose">-->
-            <!--<label for="{{source.id}}">{{source.name}}</label>-->
-        <!--</li>-->
-    <!--</ul>-->
-<!--</div>-->
+<div id="newsList">
+    <ul>
+        <li ng-repeat="elem in news">{{elem.title}}</li>
+    </ul>
+</div>
+<div class="clearFix"></div>
