@@ -7,6 +7,9 @@ newsApp.controller('NewsController', function ($scope, dataService, parseService
 
     dataService.getSources().then((response) => {
         $scope.sources = parseService.parseSources(response.data.sources);
+        $scope.colors = parseService.createColors($scope.sources);
+        // console.log($scope.sources);
+        // console.log($scope.colors);
     });
 
     $scope.updateNews = () => {
@@ -15,7 +18,5 @@ newsApp.controller('NewsController', function ($scope, dataService, parseService
     };
 
     $scope.parseTime = parseService.parseTime;
-
-    $scope.randomColor = parseService.randomColor;
 
 });

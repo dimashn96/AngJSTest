@@ -8,11 +8,11 @@
 </div>
 <div id="newsList">
     <ul>
-        <li ng-repeat="elem in news">
+        <li ng-repeat="elem in news" ng-style="{'background': colors[elem.source.id]}">
             <span class="author">{{elem.author = elem.author || 'Anonymous'}}&#58;</span>
-            <!--<span class="title">&#34;{{elem.title}}&#34;</span>-->
             <span class="title">{{elem.title}}</span>
-            <span class="date">{{parseTime(elem.publishedAt)}}</span></li>
+            <span class="date">{{parseTime(elem.publishedAt)}}</span>
+        </li>
     </ul>
 </div>
 <div class="clearFix"></div>

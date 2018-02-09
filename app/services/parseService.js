@@ -15,6 +15,7 @@ newsApp.factory('parseService', function() {
                 }
             }
             sourcesLocal[i]['choose'] = false;
+            sourcesLocal[i]['color'] = randomColor();
         });
         return sourcesLocal
     }
@@ -45,11 +46,19 @@ newsApp.factory('parseService', function() {
     }
 
     function randomColor(){
-        var r=Math.floor(Math.random() * (256));
-        var g=Math.floor(Math.random() * (256));
-        var b=Math.floor(Math.random() * (256));
-        var c='#' + r.toString(16) + g.toString(16) + b.toString(16);
-        return 'background-color: ' + c
+        console.log('randomcolor');
+        let r = Math.floor(Math.random() * (256));
+        let g = Math.floor(Math.random() * (256));
+        let b = Math.floor(Math.random() * (256));
+        return '#' + r.toString(16) + g.toString(16) + b.toString(16)
+    }
+
+    function createColors(sources) {
+        let colors = {};
+        sources.forEach(function (source) {
+            colors[source.id] = source.color;
+        });
+        return colors
     }
 
 
@@ -57,7 +66,7 @@ newsApp.factory('parseService', function() {
         parseSources : parseSources,
         parseTime : parseTime,
         getChoosedSources : getChoosedSources,
-        randomColor : randomColor
+        createColors : createColors
     }
 
 });
