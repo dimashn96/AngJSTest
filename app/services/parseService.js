@@ -44,10 +44,20 @@ newsApp.factory('parseService', function() {
         return (str[0] === '0') ? str[1] : str;
     }
 
+    function randomColor(){
+        var r=Math.floor(Math.random() * (256));
+        var g=Math.floor(Math.random() * (256));
+        var b=Math.floor(Math.random() * (256));
+        var c='#' + r.toString(16) + g.toString(16) + b.toString(16);
+        return 'background-color: ' + c
+    }
+
+
     return {
         parseSources : parseSources,
         parseTime : parseTime,
-        getChoosedSources : getChoosedSources
+        getChoosedSources : getChoosedSources,
+        randomColor : randomColor
     }
 
 });

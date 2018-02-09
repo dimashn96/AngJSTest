@@ -11,9 +11,11 @@ newsApp.controller('NewsController', function ($scope, dataService, parseService
 
     $scope.updateNews = () => {
         $scope.news = dataService.getNewsBySources($scope.sources,$scope.news);
-        console.log($scope.news);
+        // console.log($scope.news);
     };
 
     $scope.parseTime = parseService.parseTime;
+
+    $scope.randomColor = parseService.randomColor;
 
 });

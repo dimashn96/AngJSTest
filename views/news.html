@@ -10,7 +10,8 @@
     <ul>
         <li ng-repeat="elem in news">
             <span class="author">{{elem.author = elem.author || 'Anonymous'}}&#58;</span>
-            <span class="title">&#34;{{elem.title}}&#34;</span>
+            <!--<span class="title">&#34;{{elem.title}}&#34;</span>-->
+            <span class="title">{{elem.title}}</span>
             <span class="date">{{parseTime(elem.publishedAt)}}</span></li>
     </ul>
 </div>
