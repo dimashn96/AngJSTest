@@ -50,10 +50,25 @@ body {
       border: 1px solid green;
       height: 100%;
       overflow: auto;
-      font-size: 1.4vw;
+      font-size: 1.8vw;
       ul {
         li {
-          padding: 0.5vw;
+          border: 1px solid red;
+          padding: 2vw 1vw;
+          position: relative;
+          background-color: lightyellow;
+          .author {
+            font-weight: bold;
+          }
+          .title {
+
+          }
+          .date {
+            position: absolute;
+            right: 0.5vw;
+            bottom: 0.5vw;
+            font-size: 1vw;
+          }
         }
       }
     }
