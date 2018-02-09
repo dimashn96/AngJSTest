@@ -45,12 +45,20 @@ newsApp.factory('parseService', function() {
         return (str[0] === '0') ? str[1] : str;
     }
 
+    // function randomColor(){
+    //     console.log('randomcolor');
+    //     let r = Math.floor(Math.random() * (256));
+    //     let g = Math.floor(Math.random() * (256));
+    //     let b = Math.floor(Math.random() * (256));
+    //     return '#' + r.toString(16) + g.toString(16) + b.toString(16)
+    // }
+
     function randomColor(){
         console.log('randomcolor');
         let r = Math.floor(Math.random() * (256));
         let g = Math.floor(Math.random() * (256));
         let b = Math.floor(Math.random() * (256));
-        return '#' + r.toString(16) + g.toString(16) + b.toString(16)
+        return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + '0.3)'
     }
 
     function createColors(sources) {

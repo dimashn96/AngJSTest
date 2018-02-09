@@ -1,7 +1,7 @@
 {
     "api": {
         "apiKey":"b550d4a20f0d4ababfd6f83bb7eab7e8",
-        "allSources":"https://newsapi.org/v2/sources?country=ru",
+        "allSources":"https://newsapi.org/v2/sources?country=us",
         "topHeadlinesBySources":"https://newsapi.org/v2/top-headlines?sources=",
         "everythingBySources":"https://newsapi.org/v2/everything?sources="
     }
