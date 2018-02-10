@@ -1,6 +1,6 @@
 'use strict';
 
-newsApp.controller('NewsController', function ($rootScope, $scope, dataService, parseService, localStorageService) {
+newsApp.controller('NewsController', function ($scope, dataService, parseService, localStorageService) {
 
     if (localStorageService.isset('sources') && localStorageService.isset('colors')) {
         dataService.loadConfig().then(() => {
@@ -19,7 +19,6 @@ newsApp.controller('NewsController', function ($rootScope, $scope, dataService, 
 
     $scope.updateNews = () => {
         $scope.news = dataService.getNewsBySources($scope.sources,$scope.news);
-        $rootScope.news = $scope.news;
         localStorageService.set('sources',$scope.sources);
     };
 
