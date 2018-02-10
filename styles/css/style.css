@@ -75,7 +75,7 @@ body {
       font-size: 1.8vw; }
       body #main #newsList ul li {
         border: 1px solid red;
-        padding: 2vw 1vw;
+        padding: 1vw 1vw 3vw;
         position: relative;
         background-color: lightyellow; }
         body #main #newsList ul li .author {
@@ -85,3 +85,16 @@ body {
           right: 0.5vw;
           bottom: 0.5vw;
           font-size: 1vw; }
+        body #main #newsList ul li .button {
+          position: absolute;
+          left: 1vw;
+          bottom: 0.5vw;
+          font-size: 1vw;
+          user-select: none;
+          padding: 0.2vw;
+          border-radius: 0.4vw;
+          background-color: gold; }
+        body #main #newsList ul li .active {
+          cursor: pointer; }
+        body #main #newsList ul li .saved {
+          background-color: lawngreen; }

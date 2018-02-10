@@ -25,4 +25,10 @@ newsApp.controller('NewsController', function ($rootScope, $scope, dataService, 
 
     $scope.parseTime = parseService.parseTime;
 
+    $scope.saveForLater = (title) => {
+        localStorageService.saveForLater(title);
+    };
+
+    $scope.savingCheck = (title) => localStorageService.savingCheck(title);
+
 });

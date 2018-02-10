@@ -8,6 +8,7 @@
         <script src="app/app.js"></script>
         <script src="app/controllers/NewsController.js"></script>
         <script src="app/controllers/NewsDetailsController.js"></script>
+        <script src="app/controllers/SavedNewsController.js"></script>
         <script src="app/services/dataService.js"></script>
         <script src="app/services/parseService.js"></script>
         <script src="app/services/localStorageService.js"></script>
@@ -17,7 +18,16 @@
 
         <div id="title">NEWS PORTAL</div>
 
-        <div id="menu"></div>
+        <div id="menu">
+            <ul>
+                <li>
+                    <a href="#!/news">Main page</a>
+                </li>
+                <li>
+                    <a href="#!/saved">Saved news</a>
+                </li>
+            </ul>
+        </div>
 
         <div id="main">
             <ng-view></ng-view>
