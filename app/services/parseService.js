@@ -69,12 +69,28 @@ newsApp.factory('parseService', function() {
         return colors
     }
 
+    function getNewsDetails(id,title,news) {
+        console.log(id);
+        console.log(title);
+        console.log(news);
+
+        let newsDetails = {};
+        news.forEach((item) => {
+            if (item.source.id === id && item.title === title) {
+                newsDetails = item;
+            }
+        });
+        console.log(newsDetails);
+        return newsDetails
+    }
+
 
     return {
         parseSources : parseSources,
         parseTime : parseTime,
         getChoosedSources : getChoosedSources,
-        createColors : createColors
+        createColors : createColors,
+        getNewsDetails : getNewsDetails
     }
 
 });

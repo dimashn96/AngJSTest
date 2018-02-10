@@ -6,12 +6,17 @@ newsApp.factory('dataService', function($http, parseService) {
     let sources;
     let news = {};
 
+    function loadConfig() {
+        return $http({method: 'GET', url: 'config/config.json'}).then((response) => {
+            config = response.data;
+            $http.defaults.headers.common['X-Api-Key'] = config.api.apiKey;
+        })
+    }
+
     function getSources() {
         if (!config) {
-            return $http({method: 'GET', url: 'config/config.json'})
-                .then(function (response) {
-                    config = response.data;
-                    $http.defaults.headers.common['X-Api-Key'] = config.api.apiKey;
+            return loadConfig()
+                .then(function () {
                     sources = $http({method: 'GET', url: config.api.allSources});
                     return sources
             })
@@ -25,6 +30,7 @@ newsApp.factory('dataService', function($http, parseService) {
     }
 
     function getNewsBySources(sources,news) {
+        news = news || [];
         let choosedSources = parseService.getChoosedSources(sources);
         let newsLocal = news;
         let state;
@@ -44,9 +50,17 @@ newsApp.factory('dataService', function($http, parseService) {
         return newsLocal
     }
 
+    function getNewsDetails(title) {
+        return loadConfig().then(function () {
+            return $http({method: 'GET', url: config.api.topHeadlinesByQuote + title});
+        });
+    }
+
     return {
-        getSources : getSources,
-        getNewsBySources: getNewsBySources
+        loadConfig: loadConfig,
+        getSources: getSources,
+        getNewsBySources: getNewsBySources,
+        getNewsDetails: getNewsDetails
     }
 
 });
