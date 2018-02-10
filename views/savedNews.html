@@ -1,6 +1,6 @@
 <div id="newsList">
     <ul>
-        <li ng-repeat="elem in news" ng-style="{'background': colors[elem.source.id]}">
+        <li ng-repeat="elem in savedNews" ng-style="{'background': colors[elem.source.id]}">
             <a href="#!news/{{elem.source.id}}/{{elem.title}}">
                 <span class="author">{{elem.author = elem.author || 'Anonymous'}}&#58;</span>
                 <span class="title">{{elem.title}}</span>

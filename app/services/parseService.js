@@ -70,12 +70,17 @@ newsApp.factory('parseService', function() {
         return newsDetails
     }
 
+    function deleteSavedNews(title,news) {
+        return news.filter((item) => item.title !== title);
+    }
+
     return {
         parseSources : parseSources,
         parseTime : parseTime,
         getChoosedSources : getChoosedSources,
         createColors : createColors,
-        getNewsDetails : getNewsDetails
+        getNewsDetails : getNewsDetails,
+        deleteSavedNews: deleteSavedNews
     }
 
 });

@@ -15,12 +15,10 @@ newsApp.factory('localStorageService', function() {
         }
     };
     let savingCheck = (title) => get('savedNews').some((item) => item === title);
-
     let deleteSavedNews = (title) => {
         if (savingCheck(title)) {
-            console.log(title);
             let savedNews = get('savedNews');
-            savedNews.filter((item) => item !== title);
+            savedNews = savedNews.filter((item) => item !== title);
             set('savedNews',savedNews);
         }
     };

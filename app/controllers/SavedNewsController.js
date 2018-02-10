@@ -1,8 +1,6 @@
 'use strict';
 
-newsApp.controller('SavedNewsController', function ($rootScope, $scope, dataService, parseService, localStorageService) {
-
-    $scope.news = [];
+newsApp.controller('SavedNewsController', function ($scope, dataService, parseService, localStorageService) {
 
     if (localStorageService.isset('colors')) {
         $scope.colors = localStorageService.get('colors');
@@ -11,13 +9,16 @@ newsApp.controller('SavedNewsController', function ($rootScope, $scope, dataServ
         localStorageService.set('colors',$scope.colors);
     }
 
-    let titles = localStorageService.get('savedNews');
-    titles.forEach((title) => {
+    $scope.savedNews = [];
+    localStorageService.get('savedNews').forEach((title) => {
         dataService.getNewsDetails(title).then((response) => {
-            $scope.news.push(response.data.articles[0]);
+            $scope.savedNews.push(response.data.articles[0]);
         })
     });
 
-    $scope.deleteSavedNews = localStorageService.deleteSavedNews;
+    $scope.deleteSavedNews = (title) => {
+        localStorageService.deleteSavedNews(title);
+        $scope.savedNews = parseService.deleteSavedNews(title,$scope.savedNews);
+    };
 
 });
