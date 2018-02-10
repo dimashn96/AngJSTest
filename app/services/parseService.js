@@ -45,16 +45,7 @@ newsApp.factory('parseService', function() {
         return (str[0] === '0') ? str[1] : str;
     }
 
-    // function randomColor(){
-    //     console.log('randomcolor');
-    //     let r = Math.floor(Math.random() * (256));
-    //     let g = Math.floor(Math.random() * (256));
-    //     let b = Math.floor(Math.random() * (256));
-    //     return '#' + r.toString(16) + g.toString(16) + b.toString(16)
-    // }
-
     function randomColor(){
-        console.log('randomcolor');
         let r = Math.floor(Math.random() * (256));
         let g = Math.floor(Math.random() * (256));
         let b = Math.floor(Math.random() * (256));
@@ -70,20 +61,14 @@ newsApp.factory('parseService', function() {
     }
 
     function getNewsDetails(id,title,news) {
-        console.log(id);
-        console.log(title);
-        console.log(news);
-
         let newsDetails = {};
         news.forEach((item) => {
             if (item.source.id === id && item.title === title) {
                 newsDetails = item;
             }
         });
-        console.log(newsDetails);
         return newsDetails
     }
-
 
     return {
         parseSources : parseSources,

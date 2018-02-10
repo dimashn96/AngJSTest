@@ -3,7 +3,7 @@
 newsApp.factory('dataService', function($http, parseService) {
 
     let config;
-    let sources;
+    let sources = [];
     let news = {};
 
     function loadConfig() {
