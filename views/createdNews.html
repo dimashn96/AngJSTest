@@ -1,0 +1,11 @@
+<div id="newsList">
+    <ul>
+        <li ng-repeat="elem in createdNews">
+            <a href="#!news/{{elem.title}}">
+                <span class="author">{{elem.author = elem.author || 'Anonymous'}}&#58;</span>
+                <span class="title">{{elem.title}}</span>
+            </a>
+            <span class="button active" ng-click="deleteCreatedNews(elem.title)">Delete news</span>
+        </li>
+    </ul>
+</div>

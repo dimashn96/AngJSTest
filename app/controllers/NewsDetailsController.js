@@ -1,6 +1,6 @@
 'use strict';
 
-newsApp.controller('NewsDetailsController', ($scope, $routeParams, dataService) => {
+newsApp.controller('NewsDetailsController', function($scope, $routeParams, dataService) {
 
     if ($routeParams['id'] && $routeParams['title']) {
         dataService.getNewsDetails($routeParams['title'])

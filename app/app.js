@@ -19,6 +19,10 @@ let newsApp = angular.module('newsApp', ["ngRoute"])
                 templateUrl:'views/createNews.html',
                 controller:'CreateNewsController'
             })
+            .when('/created', {
+                templateUrl:'views/createdNews.html',
+                controller:'CreatedNewsController'
+            })
             .otherwise( {
                 redirectTo: '/news'
             });

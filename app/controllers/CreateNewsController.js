@@ -1,13 +1,11 @@
 'use strict';
 
-newsApp.controller('CreateNewsController', function ($scope, dataService, parseService, localStorageService) {
+newsApp.controller('CreateNewsController', function($scope, localStorageService) {
 
-    $scope.create = (news, createNewsForm) => {
+    $scope.create = (news,createNewsForm) => {
         console.log('saving');
         if (createNewsForm.$valid) {
-
-            localStorageService.createNews(news.title,news.text);
-
+            localStorageService.createNews(news.title,news.text,news.author);
         }
     }
 

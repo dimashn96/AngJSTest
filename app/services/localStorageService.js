@@ -24,12 +24,13 @@ newsApp.factory('localStorageService', function() {
         }
     };
 
-    let createNews = (title,text) => {
+    let createNews = (title,text,author) => {
         if (!creatingCheck(title)) {
             let createdNews = get('createdNews');
             createdNews.push({
                 title: title,
-                text: text
+                text: text,
+                author: author
             });
             set('createdNews',createdNews);
         }
@@ -59,7 +60,6 @@ newsApp.factory('localStorageService', function() {
         deleteSavedNews: deleteSavedNews,
         savingCheck: savingCheck,
         createNews: createNews,
-        creatingCheck: creatingCheck,
         deleteCreatedNews: deleteCreatedNews
     }
 

@@ -1,5 +1,7 @@
 <form name="createNewsForm">
     <fieldset>
+        <p><label for="newsAuthor">Your name</label>
+            <input id="newsAuthor" ng-model="news.author" required placeholder="Enter the name" ng-pattern="/^[A-Za-z0-9!?.,-]{1,30}/"/></p>
         <p><label for="newsTitle">News title</label>
             <input id="newsTitle" ng-model="news.title" required placeholder="Enter the title" ng-pattern="/^[A-Za-z0-9!?.,-]{1,30}/"/></p>
         <p><label for="newsText">News text</label>
