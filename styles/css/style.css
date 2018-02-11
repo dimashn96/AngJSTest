@@ -39,45 +39,78 @@ table {
   border-spacing: 0; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
+  a:visited {
+    color: black; }
 
 body {
   margin: 0 3vw; }
   body .clearFix {
     clear: both; }
   body #title {
-    height: 25vh;
+    height: 18vh;
     text-align: center;
-    line-height: 25vh;
+    line-height: 18vh;
     font-size: 7vw; }
+  body #menu {
+    border: solid lightgray 0.2vw;
+    border-bottom-width: 0.1vw; }
+    body #menu ul {
+      font-size: 0; }
+      body #menu ul .selected {
+        background-color: rgba(211, 211, 211, 0.2); }
+      body #menu ul li {
+        display: inline-block;
+        font-size: 3vw;
+        width: 25%;
+        height: 5vw;
+        text-align: center;
+        line-height: 5vw;
+        transition: 0.5s; }
+        body #menu ul li:hover {
+          background-color: rgba(211, 211, 211, 0.2); }
+        body #menu ul li a {
+          display: block;
+          width: 100%; }
   body #main {
-    height: 70vh;
-    border: 1px solid red; }
+    height: 65vh;
+    border: 0.15vw solid lightgray; }
+    body #main .active {
+      cursor: pointer; }
     body #main #sourcesList {
-      border: 1px solid blue;
+      border-right: 0.15vw solid lightgray;
       float: left;
-      width: 21vw;
-      height: 100%;
-      overflow: auto;
+      width: 22vw;
+      height: 100.1%;
       font-size: 1.4vw; }
-      body #main #sourcesList ul li input[type=checkbox] {
-        display: none; }
-        body #main #sourcesList ul li input[type=checkbox]:checked + label {
-          background-color: lightgray; }
-      body #main #sourcesList ul li label {
-        display: block;
-        padding: 0.2vw 0.8vw;
-        margin: 0.2vw 0; }
+      body #main #sourcesList ul {
+        height: calc(100% - 4vw);
+        width: 100.1%;
+        overflow: auto; }
+        body #main #sourcesList ul li input[type=checkbox] {
+          display: none; }
+          body #main #sourcesList ul li input[type=checkbox]:checked + label {
+            background-color: lightgray; }
+        body #main #sourcesList ul li label {
+          display: block;
+          padding: 0.2vw 0.8vw;
+          margin: 0.2vw 0; }
+      body #main #sourcesList .resetButton, body #main #sourcesList .chooseMessage {
+        width: 100.1%;
+        height: 2vw;
+        background-color: lightgray;
+        text-align: center;
+        line-height: 2vw; }
     body #main #newsList {
-      border: 1px solid green;
       height: 100%;
       overflow: auto;
       font-size: 1.8vw; }
       body #main #newsList ul li {
-        border: 1px solid red;
+        margin: 0.5vw;
         padding: 1vw 1vw 3vw;
         position: relative;
-        background-color: lightyellow; }
+        background-color: lightseagreen; }
         body #main #newsList ul li .author {
           font-weight: bold; }
         body #main #newsList ul li .date {
@@ -89,12 +122,12 @@ body {
           position: absolute;
           left: 1vw;
           bottom: 0.5vw;
-          font-size: 1vw;
+          font-size: 0.8vw;
           user-select: none;
           padding: 0.2vw;
-          border-radius: 0.4vw;
-          background-color: gold; }
-        body #main #newsList ul li .active {
-          cursor: pointer; }
+          border-radius: 0.3vw;
+          background-color: #FFD700;
+          color: black; }
         body #main #newsList ul li .saved {
-          background-color: lawngreen; }
+          background-color: #ADFF2F;
+          color: black; }

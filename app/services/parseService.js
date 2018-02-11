@@ -74,13 +74,23 @@ newsApp.factory('parseService', function() {
         return news.filter((item) => item.title !== title);
     }
 
+    function resetChoosedSources(sources) {
+        return sources.map((item) => {
+            if (item.choose) {
+                item.choose = false;
+            }
+            return item
+        });
+    }
+
     return {
         parseSources : parseSources,
         parseTime : parseTime,
         getChoosedSources : getChoosedSources,
         createColors : createColors,
         getNewsDetails : getNewsDetails,
-        deleteSavedNews: deleteSavedNews
+        deleteSavedNews: deleteSavedNews,
+        resetChoosedSources: resetChoosedSources
     }
 
 });

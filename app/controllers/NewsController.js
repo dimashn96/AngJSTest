@@ -2,6 +2,8 @@
 
 newsApp.controller('NewsController', function ($scope, dataService, parseService, localStorageService) {
 
+    $scope.page = 'allnews';
+
     if (localStorageService.isset('sources') && localStorageService.isset('colors')) {
         dataService.loadConfig().then(() => {
             $scope.sources = localStorageService.get('sources');
@@ -29,5 +31,10 @@ newsApp.controller('NewsController', function ($scope, dataService, parseService
     };
 
     $scope.savingCheck = (title) => localStorageService.savingCheck(title);
+
+    $scope.resetChoosedSources = () => {
+        $scope.sources = parseService.resetChoosedSources($scope.sources);
+        $scope.updateNews();
+    }
 
 });

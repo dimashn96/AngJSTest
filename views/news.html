@@ -1,10 +1,12 @@
 <div id="sourcesList">
+    <div class="chooseMessage">CHOOSE SOURCES</div>
     <ul>
         <li ng-repeat="source in sources">
             <input type="checkbox" id="{{source.id}}" ng-model="source.choose" ng-change="updateNews()">
             <label for="{{source.id}}">{{source.name}}</label>
         </li>
     </ul>
+    <div class="resetButton active" ng-click="resetChoosedSources()">PRESS TO RESET</div>
 </div>
 <div id="newsList">
     <ul>

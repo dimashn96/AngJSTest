@@ -11,6 +11,7 @@
         <script src="app/controllers/SavedNewsController.js"></script>
         <script src="app/controllers/CreateNewsController.js"></script>
         <script src="app/controllers/CreatedNewsController.js"></script>
+        <script src="app/controllers/MenuController.js"></script>
         <script src="app/services/dataService.js"></script>
         <script src="app/services/parseService.js"></script>
         <script src="app/services/localStorageService.js"></script>
@@ -20,18 +21,18 @@
 
         <div id="title">NEWS PORTAL</div>
 
-        <div id="menu">
+        <div ng-controller="MenuController" id="menu">
             <ul>
-                <li>
-                    <a href="#!/news">Main page</a>
+                <li ng-class="{selected: url == '/news'}">
+                    <a href="#!/news">All news</a>
                 </li>
-                <li>
+                <li ng-class="{selected: url == '/saved'}">
                     <a href="#!/saved">Saved news</a>
                 </li>
-                <li>
+                <li ng-class="{selected: url == '/create'}">
                     <a href="#!/create">Create news</a>
                 </li>
-                <li>
+                <li ng-class="{selected: url == '/created'}">
                     <a href="#!/created">Created news</a>
                 </li>
             </ul>
