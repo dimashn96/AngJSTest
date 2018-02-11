@@ -44,6 +44,17 @@ newsApp.factory('localStorageService', function() {
         }
     };
 
+    let getCreatedNewsDetails = (title) => {
+        let createdNews = get('createdNews');
+        let newsDetails;
+        createdNews.forEach((item) => {
+            if (item.title === title) {
+                newsDetails = item;
+            }
+        });
+        return newsDetails
+    };
+
     if (!isset('savedNews')) {
         set('savedNews',[]);
     }
@@ -60,7 +71,8 @@ newsApp.factory('localStorageService', function() {
         deleteSavedNews: deleteSavedNews,
         savingCheck: savingCheck,
         createNews: createNews,
-        deleteCreatedNews: deleteCreatedNews
+        deleteCreatedNews: deleteCreatedNews,
+        getCreatedNewsDetails: getCreatedNewsDetails
     }
 
 });
