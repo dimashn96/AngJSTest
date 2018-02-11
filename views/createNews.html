@@ -1,11 +1,20 @@
-<form name="createNewsForm">
-    <fieldset>
-        <p><label for="newsAuthor">Your name</label>
-            <input id="newsAuthor" ng-model="news.author" required placeholder="Enter the name" ng-pattern="/^[A-Z][a-zA-Z]{2,10}/"/></p>
-        <p><label for="newsTitle">News title</label>
-            <input id="newsTitle" ng-model="news.title" required placeholder="Enter the title" ng-pattern="/^[A-Za-z0-9!?.,-]{1,30}/"/></p>
-        <p><label for="newsText">News text</label>
-            <input id="newsText" ng-model="news.text" required placeholder="Enter the text" ng-pattern="/^[A-Za-z0-9!?.,-]{1,50}/"/></p>
-    </fieldset>
-    <button type="submit" ng-click="create(news, createNewsForm)">Сохранить</button>
-</form>
+<div id="createNews">
+    <form name="createNewsForm">
+        <fieldset>
+            <p>
+                <label for="newsAuthor">Your name</label>
+                <input name="newsAuthor" id="newsAuthor" ng-model="news.author" required placeholder="Enter the name" ng-pattern="/^[A-Z][a-zA-Z]{2,10}/" ng-class="{invalid: createNewsForm.newsAuthor.$invalid && createNewsForm.newsAuthor.$touched}"/>
+            </p>
+            <p>
+                <label for="newsTitle">News title</label>
+                <input name="newsTitle" id="newsTitle" ng-model="news.title" required placeholder="Enter the title" ng-pattern="/^[A-Za-z0-9!?.,-]{1,30}/" ng-class="{invalid: createNewsForm.newsTitle.$invalid && createNewsForm.newsTitle.$touched}"/>
+            </p>
+            <p>
+                <label for="newsText">News text</label>
+                <input name="newsText" id="newsText" ng-model="news.text" required placeholder="Enter the text" ng-pattern="/^[A-Za-z0-9!?.,-]{1,50}/" ng-class="{invalid: createNewsForm.newsText.$invalid && createNewsForm.newsText.$touched}"/>
+            </p>
+        </fieldset>
+        <button type="reset">Reset</button>
+        <button type="submit" ng-click="create(news, createNewsForm)">Save</button>
+    </form>
+</div>

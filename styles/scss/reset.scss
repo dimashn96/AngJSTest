@@ -52,3 +52,10 @@ a {
     color: black;
   }
 }
+
+input {
+  box-shadow: none;
+  &:focus {
+    outline:0;
+  }
+}

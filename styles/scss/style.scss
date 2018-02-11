@@ -156,8 +156,48 @@ body {
         }
       }
     }
+    #createNews {
+      form {
+        width: 30vw;
+        margin: 5vw auto;
+        fieldset {
+          margin-bottom: 1vw;
+          p {
+            position: relative;
+            margin: 1vw 0;
+            label {
+              font-size: 2vw;
+            }
+            input {
+              width: 15vw;
+              height: 2vw;
+              position: absolute;
+              top: 0;
+              right: 0;
+              font-size: 1.5vw;
+            }
+            border: 0.1vw solid white;
+          }
+          .invalid {
+            border-color: red;
+          }
+        }
+        button {
+          width: 47%;
+          height: 2vw;
+          font-size: 1vw;
+          &:first-of-type {
+            float: left;
+          }
+          &:last-of-type {
+            float: right;
+          }
+        }
+      }
+    }
     @media screen and (max-width: 1000px) {
       height: auto;
+      min-height: 30vh;
     }
   }
 }
