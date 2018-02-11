@@ -1,9 +1,19 @@
 <div id="newsDetails">
 
-    <p>Author: {{newsDetails.author}}</p>
-    <p>Title: {{newsDetails.title}}</p>
-    <p>Description: {{newsDetails.description}}</p>
-    <img ng-src="{{newsDetails.urlToImage}}" width="400">
-    <p>Source: {{newsDetails.source.name}}</p>
+    <div id="image">
+
+        <img ng-src="{{newsDetails.urlToImage}}">
+
+    </div>
+
+    <div id="details">
+
+        <div id="title">{{newsDetails.title}}</div>
+        <div id="author">{{newsDetails.author}}</div>
+        <div id="description">{{newsDetails.description}}</div>
+        <!--<p>{{newsDetails.description}}</p>-->
+        <!--<p>Source: {{newsDetails.source.name}}</p>-->
+
+    </div>
 
 </div>

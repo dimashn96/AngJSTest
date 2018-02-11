@@ -71,7 +71,16 @@ newsApp.factory('parseService', function() {
     }
 
     function deleteSavedNews(title,news) {
-        return news.filter((item) => item.title !== title);
+        console.log(title);
+        console.log(news);
+        return news.filter((item,i) => {
+            if (!item) {
+                news.splice(i,1);
+                return false
+            } else {
+                return item.title !== title
+            }
+        });
     }
 
     function resetChoosedSources(sources) {

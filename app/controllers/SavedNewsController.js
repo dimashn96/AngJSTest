@@ -12,7 +12,11 @@ newsApp.controller('SavedNewsController', function ($scope, dataService, parseSe
     $scope.savedNews = [];
     localStorageService.get('savedNews').forEach((title) => {
         dataService.getNewsDetails(title).then((response) => {
-            $scope.savedNews.push(response.data.articles[0]);
+            if (response.data.articles[0]) {
+                $scope.savedNews.push(response.data.articles[0]);
+            } else {
+                localStorageService.deleteSavedNews(title);
+            }
         })
     });
 
