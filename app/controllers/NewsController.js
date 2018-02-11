@@ -35,6 +35,6 @@ newsApp.controller('NewsController', function ($scope, dataService, parseService
     $scope.resetChoosedSources = () => {
         $scope.sources = parseService.resetChoosedSources($scope.sources);
         $scope.updateNews();
-    }
+    };
 
 });

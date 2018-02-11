@@ -49,6 +49,7 @@ newsApp.factory('dataService', function($http, parseService, $q) {
                     newsLocal.filter((item2) => item2.source.id !== item1.source.id);
             }
         });
+        // return parseService.uniqueOnly(newsLocal)
         return newsLocal
     }
 

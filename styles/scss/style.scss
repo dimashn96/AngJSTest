@@ -2,6 +2,7 @@
 
 body {
   margin: 0 3vw;
+  font-size: 1vw;
   .clearFix {
     clear: both;
   }
@@ -84,7 +85,7 @@ body {
           margin: 0.5vw;
           padding: 1vw 1vw 3vw;
           position: relative;
-          background-color: lightseagreen;
+          background-color: lightgray;
           .author {
             font-weight: bold;
           }
@@ -101,7 +102,7 @@ body {
             position: absolute;
             left: 1vw;
             bottom: 0.5vw;
-            font-size: 0.8vw;
+            font-size: 1vw;
             user-select: none;
             padding: 0.2vw;
             border-radius: 0.3vw;
@@ -117,18 +118,21 @@ body {
     }
     #newsDetails {
       height: 100%;
-      //border: 1px solid blue;
       #image {
         width: 50%;
         height: 100%;
         float: left;
-        //border: 1px solid red;
         display: flex;
         align-items: center;
         justify-content: center;
         img {
           max-width: 95%;
           max-height: 95%
+        }
+        @media screen and (max-width: 1000px) {
+          width: 100%;
+          float: none;
+          margin-top: 3vw;
         }
       }
       #details {
@@ -145,7 +149,15 @@ body {
           margin-top: 2vw;
           font-size: 1.5vw;
         }
+        #source {
+          margin-top: 3vw;
+          text-align: center;
+          font-size: 3vw;
+        }
       }
+    }
+    @media screen and (max-width: 1000px) {
+      height: auto;
     }
   }
 }

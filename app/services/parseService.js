@@ -92,6 +92,18 @@ newsApp.factory('parseService', function() {
         });
     }
 
+    // function uniqueOnly(arr) {
+    //     console.log(arr);
+    //     let obj = {};
+    //     arr.forEach((item) => {
+    //         let str = item.title;
+    //         console.log(item.title);
+    //         obj[str] = true; // запомнить строку в виде свойства объекта
+    //     });
+    //     console.log(obj);
+    //     return Object.keys(obj); // или собрать ключи перебором для IE8-
+    // }
+
     return {
         parseSources : parseSources,
         parseTime : parseTime,
@@ -100,6 +112,7 @@ newsApp.factory('parseService', function() {
         getNewsDetails : getNewsDetails,
         deleteSavedNews: deleteSavedNews,
         resetChoosedSources: resetChoosedSources
+        // uniqueOnly: uniqueOnly
     }
 
 });
