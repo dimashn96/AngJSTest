@@ -3,8 +3,7 @@
 let newsApp = angular.module('newsApp', ["ngRoute"])
     .config(function($routeProvider){
         $routeProvider
-            .when('/news',
-            {
+            .when('/news', {
                 templateUrl:'views/news.html',
                 controller:'NewsController'
             })
@@ -12,11 +11,14 @@ let newsApp = angular.module('newsApp', ["ngRoute"])
                 templateUrl:'views/newsDetails.html',
                 controller:'NewsDetailsController'
             })
-            .when('/saved',
-                {
+            .when('/saved', {
                     templateUrl:'views/savedNews.html',
                     controller:'SavedNewsController'
-                })
+            })
+            .when('/create', {
+                templateUrl:'views/createNews.html',
+                controller:'CreateNewsController'
+            })
             .otherwise( {
                 redirectTo: '/news'
             });

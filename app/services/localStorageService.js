@@ -7,6 +7,7 @@ newsApp.factory('localStorageService', function() {
     let set = (key,obj) => {
         localStorage[key] = JSON.stringify(obj);
     };
+
     let saveForLater = (title) => {
         if (!savingCheck(title)) {
             let savedNews = get('savedNews');
@@ -23,8 +24,31 @@ newsApp.factory('localStorageService', function() {
         }
     };
 
+    let createNews = (title,text) => {
+        if (!creatingCheck(title)) {
+            let createdNews = get('createdNews');
+            createdNews.push({
+                title: title,
+                text: text
+            });
+            set('createdNews',createdNews);
+        }
+    };
+    let creatingCheck = (title) => get('createdNews').some((item) => item.title === title);
+    let deleteCreatedNews = (title) => {
+        if (creatingCheck(title)) {
+            let createdNews = get('createdNews');
+            createdNews = createdNews.filter((item) => item.title !== title);
+            set('createdNews',createdNews);
+        }
+    };
+
     if (!isset('savedNews')) {
         set('savedNews',[]);
+    }
+
+    if (!isset('createdNews')) {
+        set('createdNews',[]);
     }
 
     return {
@@ -33,7 +57,10 @@ newsApp.factory('localStorageService', function() {
         set: set,
         saveForLater: saveForLater,
         deleteSavedNews: deleteSavedNews,
-        savingCheck: savingCheck
+        savingCheck: savingCheck,
+        createNews: createNews,
+        creatingCheck: creatingCheck,
+        deleteCreatedNews: deleteCreatedNews
     }
 
 });
