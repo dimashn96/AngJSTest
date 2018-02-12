@@ -8,7 +8,7 @@ newsApp.controller('NewsDetailsController', function($scope, $routeParams, $loca
                     $scope.newsDetails = response.data.articles[0];
                 } else {
                     alert('News not found!');
-                    $location.path('/saved');
+                    $location.path('/news');
                 }
             });
         }
