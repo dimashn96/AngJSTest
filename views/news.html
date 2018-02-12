@@ -16,7 +16,7 @@
                 <span class="title">{{elem.title}}</span>
                 <span class="date">{{parseTime(elem.publishedAt)}}</span>
             </a>
-            <span class="button active" ng-if="!savingCheck(elem.title)" ng-click="saveForLater(elem.title)">Save for later</span>
+            <span class="button active" ng-if="!savingCheck(elem.title)" ng-click="saveNews(elem.title)">Save for later</span>
             <span class="button saved" ng-if="savingCheck(elem.title)">Saved</span>
         </li>
     </ul>

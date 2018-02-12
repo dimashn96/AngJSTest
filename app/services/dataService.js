@@ -1,36 +1,30 @@
 'use strict';
 
 newsApp.factory('dataService', function($http, parseService, $q) {
-
     let config;
     let sources;
     let news = {};
     let newsDetails = {};
-
-    function loadConfig() {
+    let loadConfig = () => {
         if (!config) {
-            return $http({method: 'GET', url: 'config/config.json'}).then((response) => {
+            return $http.get('config/config.json').then((response) => {
                 config = response.data;
                 $http.defaults.headers.common['X-Api-Key'] = config.api.apiKey;
             })
         } else {
             return $q.resolve()
         }
-    }
-
-    function getSources() {
-            return loadConfig()
-                .then(() => sources = sources ||
-                    $http({method: 'GET', url: config.api.allSources}))
-    }
-
-    function getNewsBySource(source) {
+    };
+    let getSources = () => {
+        return loadConfig()
+            .then(() => sources = sources || $http.get(config.api.allSources));
+    };
+    let getNewsBySource = (source) => {
         return news[source] =
             news[source] ||
-            $http({method: 'GET', url: config.api.topHeadlinesBySources + source});
-    }
-
-    function getNewsBySources(sources,news) {
+            $http.get(config.api.allNewsBySources + source);
+    };
+    let getNewsBySources = (sources,news) => {
         news = news || [];
         let choosedSources = parseService.getChoosedSources(sources);
         let newsLocal = news;
@@ -49,22 +43,18 @@ newsApp.factory('dataService', function($http, parseService, $q) {
                     newsLocal.filter((item2) => item2.source.id !== item1.source.id);
             }
         });
-        // return parseService.uniqueOnly(newsLocal)
         return newsLocal
-    }
-
-    function getNewsDetails(title) {
+    };
+    let getNewsDetails = (title) => {
         return loadConfig()
             .then(() => newsDetails[title] =
                 newsDetails[title] ||
-                $http({method: 'GET', url: config.api.topHeadlinesByQuote + title}));
-    }
-
+                $http.get(config.api.allNewsByQuote + title));
+    };
     return {
         loadConfig: loadConfig,
         getSources: getSources,
         getNewsBySources: getNewsBySources,
         getNewsDetails: getNewsDetails
     }
-
 });

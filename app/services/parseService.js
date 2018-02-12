@@ -1,8 +1,7 @@
 'use strict';
 
 newsApp.factory('parseService', function() {
-
-    function parseSources(sources) {
+    let parseSources = (sources) => {
         let sourcesLocal = [];
         sources.forEach((source,i) => {
             sourcesLocal[i] = {};
@@ -18,9 +17,8 @@ newsApp.factory('parseService', function() {
             sourcesLocal[i]['color'] = randomColor();
         });
         return sourcesLocal
-    }
-
-    function getChoosedSources(sources) {
+    };
+    let getChoosedSources = (sources) => {
         let choosedSources = [];
         sources.forEach((source) => {
             if (source.choose) {
@@ -28,9 +26,9 @@ newsApp.factory('parseService', function() {
             }
         });
         return choosedSources
-    }
-
-    function parseTime(time) {
+    };
+    let parseTime = (time) => {
+        let delZero = (str) => (str[0] === '0') ? str[1] : str;
         time = time.substring(0,20);
         let timeStr = time.substring(time.lastIndexOf('T')+1,time.length-1);
         let dateArr = time.substring(0,time.indexOf('T')).split('-');
@@ -39,28 +37,21 @@ newsApp.factory('parseService', function() {
             timeStr = '';
         }
         return timeStr + ' ' + dateStr
-    }
-
-    function delZero (str) {
-        return (str[0] === '0') ? str[1] : str;
-    }
-
-    function randomColor(){
+    };
+    let randomColor = () => {
         let r = Math.floor(Math.random() * (256));
         let g = Math.floor(Math.random() * (256));
         let b = Math.floor(Math.random() * (256));
         return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + '0.3)'
-    }
-
-    function createColors(sources) {
+    };
+    let createColors = (sources) => {
         let colors = {};
         sources.forEach((source) => {
             colors[source.id] = source.color;
         });
         return colors
-    }
-
-    function getNewsDetails(id,title,news) {
+    };
+    let getNewsDetails = (id,title,news) => {
         let newsDetails = {};
         news.forEach((item) => {
             if (item.source.id === id && item.title === title) {
@@ -68,11 +59,8 @@ newsApp.factory('parseService', function() {
             }
         });
         return newsDetails
-    }
-
-    function deleteSavedNews(title,news) {
-        console.log(title);
-        console.log(news);
+    };
+    let deleteSavedNews = (title,news) => {
         return news.filter((item,i) => {
             if (!item) {
                 news.splice(i,1);
@@ -81,29 +69,15 @@ newsApp.factory('parseService', function() {
                 return item.title !== title
             }
         });
-    }
-
-    function resetChoosedSources(sources) {
+    };
+    let resetChoosedSources = (sources) => {
         return sources.map((item) => {
             if (item.choose) {
                 item.choose = false;
             }
             return item
         });
-    }
-
-    // function uniqueOnly(arr) {
-    //     console.log(arr);
-    //     let obj = {};
-    //     arr.forEach((item) => {
-    //         let str = item.title;
-    //         console.log(item.title);
-    //         obj[str] = true; // запомнить строку в виде свойства объекта
-    //     });
-    //     console.log(obj);
-    //     return Object.keys(obj); // или собрать ключи перебором для IE8-
-    // }
-
+    };
     return {
         parseSources : parseSources,
         parseTime : parseTime,
@@ -112,7 +86,5 @@ newsApp.factory('parseService', function() {
         getNewsDetails : getNewsDetails,
         deleteSavedNews: deleteSavedNews,
         resetChoosedSources: resetChoosedSources
-        // uniqueOnly: uniqueOnly
     }
-
 });

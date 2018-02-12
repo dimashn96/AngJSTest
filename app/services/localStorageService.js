@@ -1,14 +1,12 @@
 'use strict';
 
 newsApp.factory('localStorageService', function() {
-
     let isset = (key) => localStorage[key];
     let get = (key) => JSON.parse(localStorage[key]);
     let set = (key,obj) => {
         localStorage[key] = JSON.stringify(obj);
     };
-
-    let saveForLater = (title) => {
+    let saveNews = (title) => {
         if (!savingCheck(title)) {
             let savedNews = get('savedNews');
             savedNews.push(title);
@@ -23,7 +21,6 @@ newsApp.factory('localStorageService', function() {
             set('savedNews',savedNews);
         }
     };
-
     let createNews = (title,text,author) => {
         if (!creatingCheck(title)) {
             let createdNews = get('createdNews');
@@ -43,10 +40,9 @@ newsApp.factory('localStorageService', function() {
             set('createdNews',createdNews);
         }
     };
-
     let getCreatedNewsDetails = (title) => {
         let createdNews = get('createdNews');
-        let newsDetails;
+        let newsDetails = [];
         createdNews.forEach((item) => {
             if (item.title === title) {
                 newsDetails = item;
@@ -54,25 +50,21 @@ newsApp.factory('localStorageService', function() {
         });
         return newsDetails
     };
-
     if (!isset('savedNews')) {
         set('savedNews',[]);
     }
-
     if (!isset('createdNews')) {
         set('createdNews',[]);
     }
-
     return {
         isset: isset,
         get: get,
         set: set,
-        saveForLater: saveForLater,
+        saveNews: saveNews,
         deleteSavedNews: deleteSavedNews,
         savingCheck: savingCheck,
         createNews: createNews,
         deleteCreatedNews: deleteCreatedNews,
         getCreatedNewsDetails: getCreatedNewsDetails
     }
-
 });

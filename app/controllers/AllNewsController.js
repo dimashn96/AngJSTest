@@ -20,8 +20,8 @@ newsApp.controller('NewsController', function ($scope, dataService, parseService
         localStorageService.set('sources',$scope.sources);
     };
     $scope.parseTime = parseService.parseTime;
-    $scope.saveForLater = (title) => {
-        localStorageService.saveForLater(title);
+    $scope.saveNews = (title) => {
+        localStorageService.saveNews(title);
     };
     $scope.savingCheck = (title) => localStorageService.savingCheck(title);
     $scope.resetChoosedSources = () => {
