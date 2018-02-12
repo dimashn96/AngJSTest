@@ -46,6 +46,7 @@ newsApp.factory('parseService', function() {
     };
     let createColors = (sources) => {
         let colors = {};
+        sources = sources || [];
         sources.forEach((source) => {
             colors[source.id] = source.color;
         });

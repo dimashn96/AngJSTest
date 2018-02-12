@@ -19,9 +19,7 @@
         <title>NEWS PORTAL</title>
     </head>
     <body>
-
         <div id="mainTitle">NEWS PORTAL</div>
-
         <div ng-controller="MenuController" id="menu">
             <ul>
                 <li ng-class="{selected: url == '/news'}">
@@ -38,10 +36,8 @@
                 </li>
             </ul>
         </div>
-
         <div id="main">
             <ng-view></ng-view>
         </div>
-
     </body>
 </html>
