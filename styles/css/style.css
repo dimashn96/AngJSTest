@@ -149,6 +149,8 @@ body {
         body #main #newsDetails #image img {
           max-width: 95%;
           max-height: 95%; }
+        body #main #newsDetails #image i {
+          font-size: 8vw; }
         @media screen and (max-width: 1000px) {
           body #main #newsDetails #image {
             width: 100%;
@@ -176,8 +178,7 @@ body {
         margin-bottom: 1vw; }
         body #main #createNews form fieldset p {
           position: relative;
-          margin: 1vw 0;
-          border: 0.1vw solid white; }
+          margin: 1vw 0; }
           body #main #createNews form fieldset p label {
             font-size: 2vw; }
           body #main #createNews form fieldset p input {
@@ -186,9 +187,11 @@ body {
             position: absolute;
             top: 0;
             right: 0;
-            font-size: 1.5vw; }
-        body #main #createNews form fieldset .invalid {
-          border-color: red; }
+            padding: 0 0.3vw;
+            font-size: 1.5vw;
+            border-width: 0.05vw; }
+          body #main #createNews form fieldset p .invalid {
+            border-color: red; }
       body #main #createNews form button {
         width: 47%;
         height: 2vw;

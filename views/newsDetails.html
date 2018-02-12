@@ -1,19 +1,12 @@
 <div id="newsDetails">
-
     <div id="image">
-
         <img ng-src="{{newsDetails.urlToImage}}">
-        <div ng-if="!newsDetails.urlToImage" ><i class="fas fa-spinner fa-spin" style="font-size: 72px"></i></div>
-
+        <i ng-if="!newsDetails.urlToImage" class="fas fa-spinner fa-spin"></i>
     </div>
-
     <div id="details">
-
         <div id="title">{{newsDetails.title}}</div>
         <div id="author">{{newsDetails.author}}</div>
         <div id="description">{{newsDetails.description}}</div>
         <div id="source"><a href="{{newsDetails.url}}">Go to the source&#58; {{newsDetails.source.name}}</a></div>
-
     </div>
-
 </div>

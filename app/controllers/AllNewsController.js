@@ -1,9 +1,6 @@
 'use strict';
 
 newsApp.controller('NewsController', function ($scope, dataService, parseService, localStorageService) {
-
-    $scope.page = 'allnews';
-
     if (localStorageService.isset('sources') && localStorageService.isset('colors')) {
         dataService.loadConfig().then(() => {
             $scope.sources = localStorageService.get('sources');
@@ -18,23 +15,17 @@ newsApp.controller('NewsController', function ($scope, dataService, parseService
             localStorageService.set('colors',$scope.colors);
         });
     }
-
     $scope.updateNews = () => {
         $scope.news = dataService.getNewsBySources($scope.sources,$scope.news);
         localStorageService.set('sources',$scope.sources);
     };
-
     $scope.parseTime = parseService.parseTime;
-
     $scope.saveForLater = (title) => {
         localStorageService.saveForLater(title);
     };
-
     $scope.savingCheck = (title) => localStorageService.savingCheck(title);
-
     $scope.resetChoosedSources = () => {
         $scope.sources = parseService.resetChoosedSources($scope.sources);
         $scope.updateNews();
     };
-
 });

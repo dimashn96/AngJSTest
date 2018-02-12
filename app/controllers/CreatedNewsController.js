@@ -1,7 +1,6 @@
 'use strict';
 
 newsApp.controller('CreatedNewsController', function($scope, $routeParams, localStorageService) {
-
     if ($routeParams['title']) {
         $scope.newsDetails = localStorageService.getCreatedNewsDetails($routeParams['title']);
     } else {
@@ -14,5 +13,4 @@ newsApp.controller('CreatedNewsController', function($scope, $routeParams, local
             getCreatedNews();
         };
     }
-
 });
